@@ -1,6 +1,4 @@
 "use client";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
 import { useCountdown } from "@/hooks/useCountdown";
 import { cn } from "@/lib/utils";
 import { titleFont } from "@/utils/fonts";
@@ -70,9 +68,9 @@ export default function Banner() {
               </div>
             </div>
           )}
-          <Button asChild>
+          <button className="btn btn-neutral">
             <Link href="/invitation">Open Invitation</Link>
-          </Button>
+          </button>
         </div>
       </div>
     </main>
