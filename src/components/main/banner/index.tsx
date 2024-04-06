@@ -2,17 +2,20 @@
 import { useCountdown } from "@/hooks/useCountdown";
 import { cn } from "@/lib/utils";
 import { titleFont } from "@/utils/fonts";
+import { format } from "date-fns";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
 const NUMBER_OF_BANNERS = 3;
 
 export default function Banner() {
+  const weddingDate = process.env.NEXT_PUBLIC_WEDDING_DATE || "2024-12-31";
+  const weddingLocation = process.env.NEXT_PUBLIC_WEDDING_LOCATION || "Da Nang";
   const [currentImage, setCurrentImage] = React.useState(1);
+
   const [days, hours, minutes, seconds] = useCountdown(
-    `${process.env.NEXT_PUBLIC_WEDDING_DATE} 11:00:00`
+    `${weddingDate} 11:00:00`
   );
-  console.log("days", process.env.NEXT_PUBLIC_WEDDING_DATE);
   const isOver = days + hours + minutes + seconds <= 0;
 
   useEffect(() => {
@@ -38,7 +41,8 @@ export default function Banner() {
           <h1 className={cn("text-5xl md:text-8xl", titleFont.className)}>
             Hieu & Trang
           </h1>
-          <h2>Da Nang, 20 March 2025</h2>
+          <h2>{weddingLocation}</h2>
+          <h2>{format(new Date(weddingDate), "dd MMMM yyyy")}</h2>
           {isOver ? (
             <div className="text-xl md:text-3xl text-center">
               Wedding is over! Thank you for coming! 🎉

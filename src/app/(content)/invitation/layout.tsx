@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   // use next/navigation
   return (
-    <html lang="en" data-theme="cupcake">
+    <html lang="en" data-theme="winter">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased w-full",

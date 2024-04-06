@@ -1,10 +1,24 @@
 "use client";
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const Header: React.FC = () => {
-  const { theme, setTheme } = useTheme();
+  const browserTheme =
+    typeof window !== "undefined" ? localStorage.getItem("theme") : "light";
+  const [theme, setTheme] = useState(
+    browserTheme === "light" ? "light" : "dark"
+  );
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+      document.querySelector("html")?.setAttribute("data-theme", localTheme);
+    }
+  }, [theme]);
+
+  const handleToggle = (e: any) => {
+    setTheme(e.target.checked ? "dark" : "light");
+  };
   return (
     <header className="sticky top-0 z-50 w-full border-b backdrop-blur">
       <div className="container flex h-14 max-w-screen-2xl items-center">
@@ -51,7 +65,24 @@ export const Header: React.FC = () => {
             </a>
           </nav>
         </div>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end"></div>
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+          <label className="swap swap-rotate">
+            {/* this hidden checkbox controls the state */}
+            <input
+              type="checkbox"
+              onChange={handleToggle}
+              checked={theme === "dark"}
+            />
+
+            {/* sun icon */}
+
+            <Sun className="swap-on h-[1.2rem] w-[1.2rem] " />
+
+            {/* moon icon */}
+
+            <Moon className="swap-off" />
+          </label>
+        </div>
       </div>
     </header>
   );
