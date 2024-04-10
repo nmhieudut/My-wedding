@@ -53,31 +53,6 @@ export default function Discover() {
       <section className="container my-16 py-16">
         <div className="text-center text-4xl">{`Can't wait to see you there`}</div>
       </section>
-      <div>
-        <div
-          style={{
-            width: "100%",
-            height: 0,
-            paddingBottom: "84%",
-            position: "relative",
-          }}
-        >
-          <iframe
-            src="https://giphy.com/embed/4N99JtCB4RKJsqt6rJ"
-            width="100%"
-            height="100%"
-            style={{ position: "absolute" }}
-            frameBorder={0}
-            className="giphy-embed"
-            allowFullScreen
-          />
-        </div>
-        <p>
-          <a href="https://giphy.com/stickers/cat-cute-4N99JtCB4RKJsqt6rJ">
-            via GIPHY
-          </a>
-        </p>
-      </div>
     </>
   );
 }

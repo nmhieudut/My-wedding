@@ -1,22 +1,44 @@
+"use client";
+import { BookImage, Headset, Home } from "lucide-react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 export default function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleNavigate = (path: string) => {
+    router.push(path);
+  };
   return (
-    <footer className="py-4 md:px-8 md:py-0 border-t shadow-xl">
-      <div className="container flex flex-col items-center justify-center gap-4 md:h-24 md:flex-row">
-        <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-          Built by{/* */}{" "}
-          <Link
-            href="https://facebook.com/hieumaxnho"
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            nmhieudut - Pro Front-end Developer.
-          </Link>
-        </p>
-      </div>
-    </footer>
+    <div className="btm-nav">
+      <button
+        onClick={() => handleNavigate("/discover")}
+        className={`${
+          pathname === "/discover" ? "active" : ""
+        } bg-pink-200 text-pink-600 border-pink-600`}
+      >
+        <Home />
+        <span className="btm-nav-label">Discover</span>
+      </button>
+      <button
+        onClick={() => handleNavigate("/albums")}
+        className={`${
+          pathname === "/albums" ? "active" : ""
+        } bg-blue-200 text-blue-600 border-blue-600`}
+      >
+        <BookImage />
+        <span className="btm-nav-label">Albums</span>
+      </button>
+      <button
+        onClick={() => handleNavigate("/contact")}
+        className={`${
+          pathname === "/contact" ? "active" : ""
+        } bg-teal-200 text-teal-600 border-teal-600`}
+      >
+        <Headset />
+        <span className="btm-nav-label">Contact</span>
+      </button>
+    </div>
   );
 }

@@ -25,3 +25,5 @@ export const WEDDING_TIMELINE = [
     description: "End of the ceremony.",
   },
 ];
+
+export const SPLASH_SCREEN_DURATION = 5000;

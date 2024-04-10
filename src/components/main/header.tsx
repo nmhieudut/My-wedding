@@ -40,69 +40,10 @@ export const Header: React.FC = () => {
                 />
               </svg>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
-                  href="/discover"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
-                  href="/contact"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  className="transition-colors hover:text-foreground/80 text-foreground/60"
-                  href="/albums"
-                >
-                  Albums
-                </a>
-              </li>
-            </ul>
           </div>
           <a className="btn btn-ghost text-xl" href="/">
             TH
           </a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <nav className="flex items-center gap-4 text-sm lg:gap-6"></nav>
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/invitations"
-              >
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/contact"
-              >
-                Contact
-              </a>
-            </li>
-            <li>
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-                href="/albums"
-              >
-                Albums
-              </a>
-            </li>
-          </ul>
         </div>
         <div className="navbar-end">
           <label className="swap swap-rotate">

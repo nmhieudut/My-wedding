@@ -1,11 +1,12 @@
 "use client";
 
+import SplashScreen from "@/components/ui/SplashScreen";
 import { cn } from "@/lib/utils";
 import { fontSans } from "@/utils/fonts";
-import "./assets/globals.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import SplashScreen from "@/components/ui/SplashScreen";
+import "./assets/globals.scss";
+import SakuraEffect from "@/components/ui/Sakura";
 
 export default function RootLayout({
   children,
@@ -29,15 +30,17 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        {isLoading && isHome ? (
-          <SplashScreen
-            finishLoading={() => {
-              setIsLoading(false);
-            }}
-          />
-        ) : (
-          <>{children}</>
-        )}
+        <SakuraEffect>
+          {isLoading && isHome ? (
+            <SplashScreen
+              finishLoading={() => {
+                setIsLoading(false);
+              }}
+            />
+          ) : (
+            <>{children}</>
+          )}
+        </SakuraEffect>
       </body>
     </html>
   );
