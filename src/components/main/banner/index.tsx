@@ -1,5 +1,5 @@
 "use client";
-import { useCountdown } from "@/hooks/useCountdown";
+import { useCountdown } from "@/hooks/use-countdown";
 import { cn } from "@/lib/utils";
 import { titleFont } from "@/utils/fonts";
 import { format } from "date-fns";
@@ -72,8 +72,8 @@ export default function Banner() {
               </div>
             </div>
           )}
-          <button className="btn btn-neutral">
-            <Link href="/invitation">Open Invitation</Link>
+          <button className="btn btn-primary">
+            <Link href="/discover">Discover</Link>
           </button>
         </div>
       </div>

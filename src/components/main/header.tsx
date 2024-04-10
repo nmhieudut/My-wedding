@@ -21,51 +21,90 @@ export const Header: React.FC = () => {
   };
   return (
     <header className="sticky top-0 z-50 w-full border-b backdrop-blur">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 hidden md:flex">
-          <a className="mr-6 flex items-center space-x-2" href="/">
-            Logo
+      <div className="navbar">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a
+                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  href="/discover"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  href="/contact"
+                >
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a
+                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                  href="/albums"
+                >
+                  Albums
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a className="btn btn-ghost text-xl" href="/">
+            TH
           </a>
-          <nav className="flex items-center gap-4 text-sm lg:gap-6">
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="/docs"
-            >
-              Docs
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="/docs/components"
-            >
-              Components
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="/themes"
-            >
-              Themes
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="/examples"
-            >
-              Examples
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground"
-              href="/blocks"
-            >
-              Blocks
-            </a>
-            <a
-              className="hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
-              href="https://github.com/shadcn-ui/ui"
-            >
-              GitHub
-            </a>
-          </nav>
         </div>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <div className="navbar-center hidden lg:flex">
+          <nav className="flex items-center gap-4 text-sm lg:gap-6"></nav>
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <a
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                href="/invitations"
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                href="/contact"
+              >
+                Contact
+              </a>
+            </li>
+            <li>
+              <a
+                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                href="/albums"
+              >
+                Albums
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="navbar-end">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
