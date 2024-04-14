@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="max-h-screen w-full">
+    <div className="h-screen w-full">
       <Banner />
     </div>
   );
