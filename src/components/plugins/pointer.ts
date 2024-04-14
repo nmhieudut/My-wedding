@@ -66,7 +66,7 @@ class Flower {
   fadeOut(el: HTMLElement): void {
     el.style.opacity = "1";
     (function fade() {
-      if ((el.style.opacity -= 0.007) < 0) {
+      if (((el.style.opacity as any) -= 0.007) < 0) {
         el.parentNode?.removeChild(el);
       } else {
         requestAnimationFrame(fade);
