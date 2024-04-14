@@ -1,4 +1,4 @@
-import { Figtree as FontSans, Sacramento } from "next/font/google";
+import { Quicksand as FontSans, Sacramento } from "next/font/google";
 
 export const fontSans = FontSans({
   subsets: ["latin"],

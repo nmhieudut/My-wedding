@@ -19,7 +19,7 @@ export default function Footer() {
         } bg-pink-200 text-pink-600 border-pink-600`}
       >
         <Home />
-        <span className="btm-nav-label">Discover</span>
+        <b className="btm-nav-label">Discover</b>
       </button>
       <button
         onClick={() => handleNavigate("/albums")}
@@ -28,7 +28,7 @@ export default function Footer() {
         } bg-blue-200 text-blue-600 border-blue-600`}
       >
         <BookImage />
-        <span className="btm-nav-label">Albums</span>
+        <b className="btm-nav-label">Albums</b>
       </button>
       <button
         onClick={() => handleNavigate("/contact")}
@@ -37,7 +37,7 @@ export default function Footer() {
         } bg-teal-200 text-teal-600 border-teal-600`}
       >
         <Headset />
-        <span className="btm-nav-label">Contact</span>
+        <b className="btm-nav-label">Contact</b>
       </button>
     </div>
   );

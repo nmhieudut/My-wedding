@@ -27,7 +27,6 @@ export default function Banner() {
       clearInterval(interval);
     };
   }, []);
-  console.log({ days, hours, minutes, seconds });
   return (
     <main
       ref={bannerRef}

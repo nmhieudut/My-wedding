@@ -1,29 +1,24 @@
 export const WEDDING_TIMELINE = [
   {
-    title: "The Beginning",
+    title: "Bắt đầu",
     date: "11:00",
-    description: "Arrival in the venue, where two will become one.!",
+    description: "Bắt đầu lễ cưới.",
   },
   {
-    title: "The Ceremony",
+    title: "Lễ cưới",
+    date: "11:30",
+    description: "Nhận lễ, chụp hình cưới.",
+  },
+  {
+    title: "Tiệc",
     date: "12:00",
-    description: "Exchange of vows and rings.",
+    description: "Cắt bánh và tiết mục văn nghệ.",
   },
   {
-    title: "The Reception",
+    title: "Kết thúc",
     date: "13:00",
-    description: "Lunch and photo session.",
-  },
-  {
-    title: "The Party",
-    date: "14:00",
-    description: "Cake cutting and first dance.",
-  },
-  {
-    title: "The End",
-    date: "15:00",
-    description: "End of the ceremony.",
+    description: "Kết thúc lễ cưới. Mọi người ra về và chúc mừng.",
   },
 ];
 
-export const SPLASH_SCREEN_DURATION = 5000;
+export const SPLASH_SCREEN_DURATION = 4000;

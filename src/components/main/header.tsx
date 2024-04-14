@@ -20,8 +20,8 @@ export const Header: React.FC = () => {
     setTheme(e.target.checked ? "dark" : "light");
   };
   return (
-    <header className="sticky top-0 z-50 w-full border-b backdrop-blur">
-      <div className="navbar">
+    <header className="sticky top-0 z-50 w-full backdrop-blur">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
