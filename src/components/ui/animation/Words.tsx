@@ -7,18 +7,18 @@ export const Words = ({ value }: { value: string }) => {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ["start 0.9", "start 0.3"],
+    offset: ["start 0.9", "start center"],
   });
   const words = value.split(" ");
 
   return (
-    <motion.p ref={element}>
+    <motion.p className="flex flex-wrap" ref={element}>
       {words.map((word, index) => {
         const start = index / words.length;
         const end = start + 1 / words.length;
         return (
           <Word key={index} range={[start, end]} progress={scrollYProgress}>
-            {word}{" "}
+            {word}&nbsp;
           </Word>
         );
       })}
@@ -29,7 +29,7 @@ export const Words = ({ value }: { value: string }) => {
 const Word = ({ children, range, progress }: any) => {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
-    <span className="mr-1 relative">
+    <span className="relative">
       <span className="absolute opacity-10">{children}</span>
       <motion.span style={{ opacity }}>{children}</motion.span>
     </span>

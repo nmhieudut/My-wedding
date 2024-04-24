@@ -8,16 +8,15 @@ export const RightSide = ({ children }: RightSideProps) => {
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
-    offset: ["start 0.9", "start 0.3"],
+    offset: ["start 0.9", "1.5 end"],
   });
-  const translateX = useTransform(scrollYProgress, [0, 1], [300, 0]);
   return (
     <motion.div
       ref={element}
       style={{
         opacity: scrollYProgress,
-        translateX,
       }}
+      className="flex-1"
     >
       {children}
     </motion.div>

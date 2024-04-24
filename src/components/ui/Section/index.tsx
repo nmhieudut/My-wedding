@@ -10,17 +10,18 @@ export default function Section({ children, ...rest }: Props) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.9", "start 0.3"],
+    offset: ["0 1", "1.33 1"],
   });
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (
     <motion.section
-      className="relative min-h-[150vh] h-full flex items-center justify-center w-full"
+      className="relative min-h-[250vh] h-full flex justify-center w-full border"
       ref={ref}
-      style={{ opacity: scrollYProgress }}
+      style={{ opacity }}
       {...rest}
     >
-      <motion.div className="sticky top-0 left-0 h-full">{children}</motion.div>
+      <div className="sticky top-0 left-0 h-full">{children}</div>
     </motion.section>
   );
 }
